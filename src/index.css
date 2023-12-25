@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto&display=swap');
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body {
+  font-family: Inter;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  max-height: 100%;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+.nav-logo {
+  color: #000;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.nav-right {
+  width: 427px;
+  height: 21px;
+  flex-shrink: 0;
+}
