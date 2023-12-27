@@ -128,6 +128,7 @@ const ContactLabel = styled.div`
 const ContactValue = styled.div`
   color: #000;
   font: 400 24px Inter, sans-serif;
+  text-align: center;
   margin-top: 8px;
 
   a:hover {
