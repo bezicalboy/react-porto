@@ -60,7 +60,7 @@ const Header = styled.div`
     max-width: 100%;
   }
   @media only screen and (max-width: 768px) {
-    font-size: 14px;
+    font-size: 12px;
     margin: auto;
     width: fit-content; /* Adjust the width to fit the content */
     margin-bottom: -20px;
