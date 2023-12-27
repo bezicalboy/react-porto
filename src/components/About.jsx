@@ -33,8 +33,8 @@ const About = () => {
       <Content>
         My name is Muhamad Rico Wijaya
         <br />
-        <ContentText>Full Stack Web Developer</ContentText>
       </Content>
+      <ContentText>Full Stack Web Developer</ContentText>
       <ContentDetail>{typedText}</ContentDetail>
       <Button>
         <Link to="/contact">Contact Me</Link>
