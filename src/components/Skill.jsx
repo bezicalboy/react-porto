@@ -161,6 +161,10 @@ const SkillDiv = styled.div`
     margin-right: 10px;
     white-space: initial;
   }
+  @media (max-width: 768px) {
+    max-width: 100%;
+    margin: auto;
+  }
 `;
 
 const SkillsGrid = styled.div`
