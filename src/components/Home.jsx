@@ -13,7 +13,7 @@ const Home = () => {
     <Wrapper>
       <Header>Hi There!</Header>
       <Content>
-        My name is <br /> Muhamad Rico Wijaya.
+        My name is <br /> Muhamad Rico Wijaya
       </Content>
       <ImageContainer>
         {images.map((image, index) => (
