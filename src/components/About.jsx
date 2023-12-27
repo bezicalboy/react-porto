@@ -11,12 +11,13 @@ const About = () => {
   const [typedText, setTypedText] = useState('');
 
   useEffect(() => {
-    const targetText = `Deetail-oriented, analytical, and self-driven programmer with extensive experience building user-facing applications. Efficient and knowledgeable coder with skills in HTML, CSS, PHP, and JavaScript programming languages. Coordinated and collaborative team player with attention to detail, graphic design skills, and ability to contribute to code base improvement initiatives and UX improvement projects.`;
+    const targetText =
+      'Detail-oriented, analytical, and self-driven programmer with extensive experience building user-facing applications. Efficient and knowledgeable coder with skills in HTML, CSS, PHP, and JavaScript programming languages. Coordinated and collaborative team player with attention to detail, graphic design skills, and ability to contribute to code base improvement initiatives and UX improvement projects.';
 
     let index = 0;
     const intervalId = setInterval(() => {
       if (index < targetText.length) {
-        setTypedText((prevText) => prevText + targetText[index]);
+        setTypedText(targetText.substring(0, index + 1));
         index++;
       } else {
         clearInterval(intervalId);
@@ -41,6 +42,8 @@ const About = () => {
     </Wrapper>
   );
 };
+
+// (rest of the code remains the same)
 
 const fadeIn = keyframes`
   from {
