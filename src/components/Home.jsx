@@ -54,7 +54,7 @@ const Wrapper = styled.div`
 const Header = styled.div`
   color: #909090;
   font: 500 20px Inter, sans-serif;
-  animation: ${fadeIn} 1s ease-in-out;
+  animation: ${fadeIn} 3s ease-in-out;
 
   @media (max-width: 991px) {
     max-width: 100%;
