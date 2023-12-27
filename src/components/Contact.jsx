@@ -1,5 +1,5 @@
 import { styled, keyframes } from 'styled-components';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function Contact() {
   const [pageTitle] = useState('Contact');
@@ -8,6 +8,7 @@ function Contact() {
   useEffect(() => {
     document.title = pageTitle;
   }, [pageTitle]);
+
   return (
     <Wrapper>
       <Title>CONTACT</Title>
@@ -16,19 +17,19 @@ function Contact() {
           <ContactItem>
             <ContactLabel>Email:</ContactLabel>
             <ContactValue>
-              <a href="mailto:mhmdrcow3363@gmail.com">mhmdrcow3363@gmail.com</a>
+              <Ahref href="mailto:mhmdrcow3363@gmail.com">mhmdrcow3363@gmail.com</Ahref>
             </ContactValue>
           </ContactItem>
           <ContactItem>
             <ContactLabel>Phone:</ContactLabel>
             <ContactValue>
-              <a href="https://wa.link/c1vamk">+62 8960 3133 982</a>
+              <Ahref href="https://wa.link/c1vamk">+62 8960 3133 982</Ahref>
             </ContactValue>
           </ContactItem>
           <ContactItem>
             <ContactLabel>Address:</ContactLabel>
             <ContactValue>
-              <a href="https://www.google.com/maps/@-6.6731823,106.8557136,3a,75y,5.5h,61.09t/data=!3m6!1e1!3m4!1symQNuRZRNsriW8ZDXKjF-Q!2e0!7i16384!8i8192?authuser=0&hl=id&entry=ttu">Jalan Veteran 3 no 31 Kab. Bogor 16720</a>
+              <Ahref href="https://www.google.com/maps/@-6.6731823,106.8557136,3a,75y,5.5h,61.09t/data=!3m6!1e1!3m4!1symQNuRZRNsriW8ZDXKjF-Q!2e0!7i16384!8i8192?authuser=0&hl=id&entry=ttu">Jalan Veteran 3 no 31 Kab. Bogor</Ahref>
             </ContactValue>
           </ContactItem>
         </ContactInfo>
@@ -36,6 +37,10 @@ function Contact() {
     </Wrapper>
   );
 }
+const Ahref = styled.a`
+  color: #000;
+  text-decoration: none;
+`;
 
 const fadeInLeft = keyframes`
   from {
@@ -65,6 +70,7 @@ const Title = styled.div`
   margin-top: 30px;
   white-space: nowrap;
   font: 400 20px Inter, sans-serif;
+
   @media (max-width: 991px) {
     white-space: initial;
   }
@@ -78,6 +84,7 @@ const Content = styled.div`
   align-items: center;
   margin: 0 0 5px;
   padding: 0 29px 37px;
+
   @media (max-width: 991px) {
     max-width: 100%;
     margin-top: 40px;
@@ -90,7 +97,8 @@ const ContactInfo = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 32px;
-  animation: ${fadeInLeft} 0.5s ease-in-out; /* Fade-in and left-to-right transition */
+  animation: ${fadeInLeft} 0.5s ease-in-out;
+
   @media (max-width: 768px) {
     margin-top: 20px;
   }

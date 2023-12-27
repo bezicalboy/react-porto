@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 import { styled, keyframes } from 'styled-components';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const About = () => {
   const [pageTitle] = useState('About');
   useEffect(() => {
     document.title = pageTitle;
   }, [pageTitle]);
+
   const [typedText, setTypedText] = useState('');
 
   useEffect(() => {
@@ -31,7 +32,7 @@ const About = () => {
       <Content>
         My name is Muhamad Rico Wijaya
         <br />
-        <ContentText>I’m a Full Stack Web Developer</ContentText>
+        <ContentText>Full Stack Web Developer</ContentText>
       </Content>
       <ContentDetail>{typedText}</ContentDetail>
       <Button>
@@ -40,10 +41,6 @@ const About = () => {
     </Wrapper>
   );
 };
-
-// ... (rest of the code remains the same)
-
-//
 
 const fadeIn = keyframes`
   from {
@@ -59,8 +56,9 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 50px 60px;
+
   @media (max-width: 991px) {
-    padding-left: 20px;
+    padding: 25px 20px;
   }
 `;
 
@@ -69,10 +67,8 @@ const Heading = styled.div`
   align-self: stretch;
   margin-top: 20px;
   font: 400 20px Inter, sans-serif;
-  animation: ${fadeIn} 1s ease-in-out; /* Adjust the animation duration as needed */
-  @media (max-width: 991px) {
-    max-width: 100%;
-  }
+  animation: ${fadeIn} 1s ease-in-out;
+
   @media (max-width: 768px) {
     font-size: 16px;
   }
@@ -83,32 +79,29 @@ const Content = styled.div`
   align-self: stretch;
   margin-top: 26px;
   font: 700 32px/45px Inter, sans-serif;
-  animation: ${fadeIn} 2s ease-in-out; /* Adjust the animation duration as needed */
+  animation: ${fadeIn} 2s ease-in-out;
 
-  @media (max-width: 991px) {
-    max-width: 100%;
-  }
   @media (max-width: 768px) {
     margin-top: 16px;
     font-size: 18px;
   }
 `;
-const ContentText = styled.div`
-  font-size: 40px;
-  animation: ${fadeIn} 2s ease-in-out; /* Adjust the animation duration as needed */
 
+const ContentText = styled.div`
+  font-size: 32px;
+  animation: ${fadeIn} 2s ease-in-out;
+  font-weight: 500;
   @media (max-width: 768px) {
-    font-size: 24px;
+    font-size: 15px;
   }
 `;
+
 const ContentDetail = styled.div`
   color: #000;
   align-self: stretch;
   margin-top: 25px;
   font: 400 22px/31px Inter, sans-serif;
-  @media (max-width: 991px) {
-    max-width: 100%;
-  }
+
   @media (max-width: 768px) {
     font-size: 16px;
   }
@@ -125,20 +118,23 @@ const Button = styled.div`
   margin: 26px 0 26px;
   padding: 18px 26px;
   font: 400 16px/141% Inter, sans-serif;
-  animation: ${fadeIn} 3s ease-in-out; /* Adjust the animation duration as needed */
+  animation: ${fadeIn} 3s ease-in-out;
 
   @media (max-width: 991px) {
     white-space: initial;
     padding: 0 20px;
   }
+
   a {
     text-decoration: none;
     color: #9747ff;
   }
+
   &:hover {
     cursor: pointer;
-    color: #fffff;
+    color: #fff;
     background-color: #9747ff;
+
     a {
       color: #fff;
     }

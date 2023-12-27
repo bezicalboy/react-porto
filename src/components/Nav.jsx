@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import { NavLink as Link } from 'react-router-dom';
+import { NavLink as Link, useLocation } from 'react-router-dom';
 
-function Navbar() {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -16,33 +17,32 @@ function Navbar() {
       </MobileIcon>
       <Nav isOpen={isOpen}>
         <Logo>
-          <Link to="/">BEZICAL</Link>
+          <Link to="/" style={linkStyle}>
+            BEZICAL
+          </Link>
         </Logo>
         <Links>
-          <NavLink>
-            <Link to="/">Home</Link>
-          </NavLink>
-          <NavLink>
-            <Link to="/about">About</Link>
-          </NavLink>
-          <NavLink>
-            <Link to="/skill">Skill</Link>
-          </NavLink>
-          <NavLink>
-            <Link to="/project">Project</Link>
-          </NavLink>
-          <NavLink>
-            <Link to="/contact">Contact</Link>
-          </NavLink>
+          {navLinks.map(({ id, to, text }) => (
+            <NavLink key={id} isActive={location.pathname === to}>
+              <CustomLink to={to} onClick={() => setIsOpen(false)} isActive={location.pathname === to}>
+                {text}
+              </CustomLink>
+            </NavLink>
+          ))}
         </Links>
       </Nav>
     </>
   );
-}
+};
+
+const linkStyle = {
+  textDecoration: 'none',
+  color: '#000',
+};
 
 const Nav = styled.div`
   justify-content: space-between;
-  align-items: start;
+  align-items: center;
   background-color: #fff;
   display: flex;
   gap: 20px;
@@ -54,9 +54,9 @@ const Nav = styled.div`
     padding: 0 20px;
     display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
     position: absolute;
-    top: 80px;
+    top: 50px;
     left: 0;
-    width: 100%;
+    width: 33%;
     background-color: #fff;
     z-index: 1;
   }
@@ -87,16 +87,21 @@ const Links = styled.div`
   }
 `;
 
+const CustomLink = styled(Link)`
+  text-decoration: none;
+  color: ${({ isActive }) => (isActive ? '#000' : '#888')};
+
+  &:hover {
+    color: #000;
+  }
+`;
+
 const NavLink = styled.nav`
-  color: #000;
   align-self: start;
   font: 600 17px Inter, sans-serif;
 
   @media (max-width: 991px) {
     white-space: initial;
-  }
-  &.active {
-    color: #fff;
   }
 `;
 
@@ -111,5 +116,13 @@ const MobileIcon = styled.div`
     }
   }
 `;
+
+const navLinks = [
+  { id: 1, to: '/', text: 'Home' },
+  { id: 2, to: '/about', text: 'About' },
+  { id: 3, to: '/skills', text: 'Skill' },
+  { id: 4, to: '/projects', text: 'Project' },
+  { id: 5, to: '/contact', text: 'Contact' },
+];
 
 export default Navbar;
