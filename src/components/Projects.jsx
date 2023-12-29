@@ -73,7 +73,8 @@ const AnimatedProjectImage = styled.a`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #9747ff;
+    color: white;
+    background-color: black;
     font-weight: bold;
     text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3), 0px -4px 10px rgba(255, 255, 255, 0.3);
     font-size: 18px;
