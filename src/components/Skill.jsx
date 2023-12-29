@@ -54,6 +54,57 @@ const skillsData = [
     name: 'Bootstrap',
     imageSrc: 'https://th.bing.com/th/id/OIP.KTq5K5E3QeLVrm71FR0w8gHaHa?w=1280&h=1280&rs=1&pid=ImgDetMain',
   },
+  {
+    id: 11,
+    name: 'Tailwind CSS',
+    imageSrc: 'https://www.drupal.org/files/styles/grid-3-2x/public/project-images/screenshot_361.png?itok=w4CzcWyb',
+  },
+  {
+    id: 12,
+    name: 'Sass',
+    imageSrc:
+      'https://th.bing.com/th/id/R.6d454ae448825df4cd80fb76bd0bbd6a?rik=1wBbK8%2fCYL45ZA&riu=http%3a%2f%2fvanseodesign.com%2fblog%2fwp-content%2fuploads%2f2015%2f09%2fsass-logo-2.png&ehk=oEgMcNWEWG5jNh5Z7TdC2KcqaRR5Fkrs7ZTu06Pu5FI%3d&risl=&pid=ImgRaw&r=0',
+  },
+  {
+    id: 13,
+    name: 'Git',
+    imageSrc: 'https://3.bp.blogspot.com/-xhNpNJJyQhk/XIe4GY78RQI/AAAAAAAAItc/ouueFUj2Hqo5dntmnKqEaBJR4KQ4Q2K3ACK4BGAYYCw/s1600/logo%2Bgit%2Bicon.png',
+  },
+  {
+    id: 14,
+    name: 'Figma',
+    imageSrc: 'https://2.bp.blogspot.com/-KVFNcyNJpmc/XIe-Sqa674I/AAAAAAAAIuk/VRK5WWydfD4yjMq_AkU6B2h3WAROEvOMgCK4BGAYYCw/s1600/logo%2Bfigma%2Bicon.png',
+  },
+  {
+    id: 15,
+    name: 'After Effect',
+    imageSrc: 'https://th.bing.com/th/id/OIP.CR8vNC_Yh5AGG_DXR45PLwHaEq?rs=1&pid=ImgDetMain',
+  },
+  {
+    id: 16,
+    name: 'Photoshop',
+    imageSrc: 'https://logodownload.org/wp-content/uploads/2019/10/adobe-photoshop-logo.png',
+  },
+  {
+    id: 17,
+    name: 'Unreal Engine',
+    imageSrc: 'https://th.bing.com/th/id/OIP.eUCEBcs5pStm6lSEUlM1KQHaE8?rs=1&pid=ImgDetMain',
+  },
+  {
+    id: 18,
+    name: 'Blender',
+    imageSrc: 'https://th.bing.com/th/id/OIP.UKePsm1QkwEkmk7YyHOQpAHaGD?rs=1&pid=ImgDetMain',
+  },
+  {
+    id: 19,
+    name: 'Premiere Pro',
+    imageSrc: 'https://computermalaysia.com.my/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/p/r/premiere_pro_cc.png',
+  },
+  {
+    id: 20,
+    name: 'MS Office',
+    imageSrc: 'https://th.bing.com/th/id/OIP.in20Jx8RA_4ZVZHOPlAPqgHaIx?w=864&h=1024&rs=1&pid=ImgDetMain',
+  },
 ];
 
 function SkillCard({ name, imageSrc }) {
@@ -99,7 +150,8 @@ const Card = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 10px;
-  padding: 13px;
+  padding: 10px;
+
   transition: transform 0.3s ease-in-out; /* Added transition for pop-up effect */
   animation: ${fadeInLeft} 0.5s ease-in-out; /* Fade-in and left-to-right transition */
 
@@ -152,18 +204,12 @@ function SkillComponent() {
 
 const SkillDiv = styled.div`
   color: #000;
-  margin-right: 34px;
   white-space: nowrap;
   font: 400 20px Inter, sans-serif;
   text-align: center;
 
   @media (max-width: 991px) {
-    margin-right: 10px;
     white-space: initial;
-  }
-  @media (max-width: 768px) {
-    max-width: 100%;
-    margin: auto;
   }
 `;
 
@@ -174,6 +220,7 @@ const SkillsGrid = styled.div`
 
   @media (max-width: 991px) {
     grid-template-columns: repeat(2, 1fr); /* 2 per line on mobile */
+    gap: 8px;
   }
 `;
 
